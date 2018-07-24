@@ -2,22 +2,11 @@
 
 .home {
   margin: 0 auto;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-top: 50px;
   width: 100%;
   text-align: center;
-  @include tablet {
-    width: 540px;
-  }
-  @include laptop {
-    width: 720px;
-  }
-  @include desktop {
-    width: 740px;
-  }
 
   &__logo {
-    padding-top: 100px;
     margin-bottom: 30px;
     font-size: 3rem;
     text-align: center;
