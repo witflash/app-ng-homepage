@@ -1,15 +1,15 @@
 .header {
-	padding-top: 1rem;
-	
-	&__toolbar {
-		display: flex;
-		justify-content: flex-end;
-	}
+  padding: 0.5rem 1rem;
 
-	&__item {
-		margin-right: 1rem;
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+  &__toolbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    margin-right: 1rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }

@@ -1,0 +1,77 @@
+/* FONT VARIABLES */
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5 !default;
+
+
+/* COLOR VARIABLES */
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$color-primary:          #4fb8fe;
+$color-secondary:        #3dd889;
+$color-danger:           #f14d4d;
+$color-success:          #42ca7d;
+$color-text:             #626262;
+$color-text-light:       #838383;
+$color-title:            #444444;
+$color-link:             #228bd1;
+$color-active:           #137ce8;
+$color-form:             #477ecf;
+$color-form-input:       $gray-500;
+$color-form-placeholder: #a09f9f;
+$color-form-box:         #eaf6ef;
+$color-footer:           #2a589a;
+$color-white:            #ffffff;
+
+$color-table-border:     #e5e5e5;
+$color-table-cell:       #f2fbff;
+
+$color-shadow:           #53b9fc;
+
+// color system
+$body-bg:                   $white !default;
+$body-color:                $gray-900 !default;
+
+
+/* TRANSITIONS AND ANIMATIONS */
+$delay-global: 250ms;
+
+
+/* BREAKPOINTS */
+$mobile-width:  420px;
+$phablet-width: 576px;
+$tablet-width:  768px;
+$laptop-width:  992px;
+$desktop-width: 1200px;

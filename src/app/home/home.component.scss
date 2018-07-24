@@ -1,6 +1,46 @@
-.home {
+@import '../../sass/helpers/all';
 
-	&__logo {
-		font-size: 3rem;
-	}
+.home {
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  text-align: center;
+  @include tablet {
+    width: 540px;
+  }
+  @include laptop {
+    width: 720px;
+  }
+  @include desktop {
+    width: 740px;
+  }
+
+  &__logo {
+    padding-top: 100px;
+    margin-bottom: 30px;
+    font-size: 3rem;
+    text-align: center;
+    color: $color-primary;
+    font-weight: 500;
+    @include tablet {
+      font-size: 4rem;
+    }
+    @include desktop {
+      font-size: 5rem;
+    }
+  }
+
+  &__input {
+    padding: 0.5rem;
+    width: 100%;
+    font-size: $font-size-lg;
+    border: 1px solid $color-form-input;
+    border-radius: 4px;
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 2px 2px rgba($color-primary, 0.5);
+    }
+  }
 }
