@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Link } from '../link';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -11,22 +12,23 @@ export class HomeComponent implements OnInit {
   newLink: Link = new Link();
   allLinks: Link[] = [];
 
-  test: string = '';
-
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private http: HttpClient) {}
 
   ngOnInit() {
-    this.api.getAllLinks().subscribe(allLinks => {
-      this.allLinks = allLinks;
-    });
+    this.getAllLinks();
   }
 
   getAllLinks() {
-    console.log(this.allLinks);
+    this.api.getAllLinks().subscribe(allLinks => {
+      this.allLinks = allLinks;
+    });
+    console.log('this.allLinks: ', this.allLinks);
   }
 
   addLink() {
-    console.log(this.newLink);
-    return this.api.addLink(this.newLink);
-  }
+    this.api.addLink(this.newLink).subscribe(link => {
+      this.allLinks.push(link);
+    });
+      this.newLink = new Link();
+    }
 }

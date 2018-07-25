@@ -19,7 +19,8 @@ export class ApiService {
   }
 
   public addLink(link: Link): Observable<Link> {
-    return this.http.post<Link>(API_URL + '/links', link).pipe(catchError(this.handleError));
+    console.log('link: ', link);
+    return this.http.post<Link>(API_URL + '/links', link);
   }
 
   private handleError(error: HttpErrorResponse) {
