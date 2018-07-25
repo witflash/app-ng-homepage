@@ -1,0 +1,12 @@
+{
+  "links": [
+    {
+      "url": "https://google.com",
+      "title": "Google"
+    },
+    {
+      "url": "wikipedia.org",
+      "title": "Wikipedia"
+    }
+  ]
+}

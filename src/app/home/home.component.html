@@ -3,5 +3,14 @@
     HomePage
   </div>
 
-  <input class="home__input" placeholder="Add new link">
+  <input class="home__input" placeholder="Add new link" [(ngModel)]="newLink.url" (keyup.enter)="addLink()">
+
+  <div class="home__body">
+    <div *ngFor="let link of allLinks">
+      <p>{{ link.url }}</p>
+    </div>
+
+
+    <button (click)="getAllLinks()">Console.log all Links</button>
+  </div>
 </div>
