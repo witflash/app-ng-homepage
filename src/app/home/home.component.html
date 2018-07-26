@@ -5,10 +5,11 @@
   <input class="home__input" placeholder="Add new link" [(ngModel)]="newLink.url" (keyup.enter)="addLink()">
 
   <div class="home__body">
-    <div *ngFor="let link of allLinks">
-      <p>{{ link.url }}</p>
+    <div class="home__tiles">
+      <div class="home__tile-wrap" *ngFor="let link of allLinks">
+        <app-tile [link]="link" [allLinks]="allLinks"></app-tile>
+      </div>
     </div>
-
     <button (click)="getAllLinks()">Console.log all Links</button>
   </div>
 </div>

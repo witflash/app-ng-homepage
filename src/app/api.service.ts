@@ -15,12 +15,18 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   public getAllLinks(): Observable<Link[]> {
-    return this.http.get<Link[]>(API_URL + '/links').pipe(catchError(this.handleError));
+    return this.http.get<Link[]>(API_URL + '/links')
+      .pipe(catchError(this.handleError));
   }
 
   public addLink(link: Link): Observable<Link> {
-    console.log('link: ', link);
-    return this.http.post<Link>(API_URL + '/links', link);
+    return this.http.post<Link>(API_URL + '/links', link)
+      .pipe(catchError(this.handleError));
+  }
+
+  public removeLink(linkId: number): Observable<Link> {
+    return this.http.delete<Link>(API_URL + '/links/' + linkId)
+      .pipe(catchError(this.handleError))
   }
 
   private handleError(error: HttpErrorResponse) {

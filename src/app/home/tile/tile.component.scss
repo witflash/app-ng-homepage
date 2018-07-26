@@ -1,0 +1,23 @@
+@import '../../../sass/helpers/all';
+
+.tile {
+	position: relative;
+	height: 100%;
+	border: 1px solid $gray-300;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(#000, 0.1);
+	cursor: pointer;
+	user-select: none;
+	transition-duration: $delay-global;
+	&:hover {
+		border-color: $gray-400;
+		box-shadow: 0 0 20px rgba(#000, 0.15);
+	}
+
+	&__del {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}

@@ -3,6 +3,11 @@
       @content;
   }
 }
+@mixin mobile {
+  @media (min-width: $mobile-width) {
+      @content;
+  }
+}
 @mixin phablet {
   @media (min-width: $phablet-width) {
       @content;

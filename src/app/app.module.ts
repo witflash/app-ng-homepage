@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ApiService } from './api.service';
+import { DataService } from './data.service';
+import { TileComponent } from './home/tile/tile.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,9 +29,10 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     NavComponent,
+    TileComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, FormsModule],
-  providers: [ApiService],
+  providers: [ApiService, DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

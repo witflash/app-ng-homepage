@@ -32,4 +32,39 @@
       box-shadow: 0 0 2px 2px rgba($color-primary, 0.5);
     }
   }
+
+  &__tiles {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    @include mobile {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+  
+  &__tile-wrap {
+    flex: 1 0 auto;
+    margin-bottom: 20px;
+    height: 150px;
+    @include mobile {
+      flex: 0 0 47%;
+      height: 180px;
+    }
+    @include tablet {
+      flex: 0 0 180px;
+      height: 160px;
+      &:nth-child(3n - 1) {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+    @include laptop {
+      flex: 0 0 210px;
+    }
+  }
 }

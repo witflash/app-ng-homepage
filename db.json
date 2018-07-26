@@ -6,16 +6,15 @@
       "id": 0
     },
     {
-      "url": "wikipedia.org",
-      "title": "Wikipedia",
+      "url": "test",
       "id": 1
     },
     {
-      "url": "http://4pda.ru",
+      "url": "another test",
       "id": 2
     },
     {
-      "url": "ukr.net",
+      "url": "yet one test",
       "id": 3
     }
   ]
