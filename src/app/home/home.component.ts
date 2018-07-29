@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit {
     this.newLink = new Link();
     }
 
-  getAllLinks() {
-    this.data.getAllLinks()
-      .subscribe(links => this.allLinks = links);
+  updateLinks(links) {
+    console.log('links: ', links);
+    this.allLinks = links;
   }
 }

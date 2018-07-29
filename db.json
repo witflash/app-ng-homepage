@@ -8,14 +8,6 @@
     {
       "url": "test",
       "id": 1
-    },
-    {
-      "url": "another test",
-      "id": 2
-    },
-    {
-      "url": "yet one test",
-      "id": 3
     }
   ]
 }

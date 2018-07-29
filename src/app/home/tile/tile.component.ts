@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Link } from '../../link';
 import { DataService } from '../../data.service';
 import { HomeComponent } from '../home.component';
@@ -11,6 +11,7 @@ import { HomeComponent } from '../home.component';
 export class TileComponent implements OnInit {
   @Input() link: Link;
   @Input() allLinks: Link[];
+  @Output() onChange = new EventEmitter<Link[]>();
 
   constructor(
     private data: DataService,
@@ -25,9 +26,7 @@ export class TileComponent implements OnInit {
     console.log(this.link);
     this.data.removeLink(this.link.id)
       .subscribe(link => {
-        this.allLinks.filter(item => item.id !== link.id)
-      })
-    this.home.getAllLinks();
+        this.onChange.emit(this.allLinks.filter(item => item.id !== link.id));
+      });
   }
-
 }

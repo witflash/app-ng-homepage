@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
   constructor(private api: ApiService) { }
+  newLink: Link = new Link();
 
   getAllLinks(): Observable<Link[]> {
     return this.api.getAllLinks();

@@ -7,7 +7,7 @@
   <div class="home__body">
     <div class="home__tiles">
       <div class="home__tile-wrap" *ngFor="let link of allLinks">
-        <app-tile [link]="link" [allLinks]="allLinks"></app-tile>
+        <app-tile [link]="link" [allLinks]="allLinks" (onChange)="updateLinks($event)"></app-tile>
       </div>
     </div>
     <button (click)="getAllLinks()">Console.log all Links</button>
