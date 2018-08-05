@@ -4,19 +4,31 @@ import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class DataService {
-  constructor(private api: ApiService) { }
+export class DataLinkService {
+  public allLinks: Link[] = [];
   newLink: Link = new Link();
 
-  getAllLinks(): Observable<Link[]> {
-    return this.api.getAllLinks();
+  constructor(private api: ApiService) {}
+
+  getAllLinks() {
+    return this.allLinks;
   }
+
+  public updateAllLinks() {
+    this.api.getAllLinks().subscribe(links => {
+      this.allLinks = links;
+    });
+  }
+
+  // getAllLinks(): Observable<Link[]> {
+  //   return this.api.getAllLinks();
+  // }
 
   addLink(newLink: Link): Observable<Link> {
     return this.api.addLink(newLink);
-    }
+  }
 
   removeLink(linkId: number): Observable<Link> {
     return this.api.removeLink(linkId);

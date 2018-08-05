@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/Forms'
+import { FormsModule } from '@angular/Forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -12,8 +12,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ApiService } from './api.service';
-import { DataService } from './data.service';
+import { DataLinkService } from './data-link.service';
 import { TileComponent } from './home/tile/tile.component';
+import { GlobalService } from './global.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,7 +33,7 @@ const appRoutes: Routes = [
     TileComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, FormsModule],
-  providers: [ApiService, DataService],
+  providers: [ApiService, DataLinkService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

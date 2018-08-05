@@ -1,32 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { Link } from '../link';
-import { DataService } from '../data.service';
+import { DataLinkService } from '../data-link.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [DataService],
+  providers: [DataLinkService],
 })
 export class HomeComponent implements OnInit {
   allLinks: Link[] = [];
   newLink: Link = new Link();
 
-  constructor(private data: DataService) {}
+  constructor(private data: DataLinkService) {}
 
   ngOnInit() {
-    this.data.getAllLinks()
-      .subscribe(links => {this.allLinks = links});
+    this.getAllLinks();
   }
 
-  addLink() {
-    this.data.addLink(this.newLink)
-      .subscribe(link => { this.allLinks.push(link) });
-    this.newLink = new Link();
-    }
+  getAllLinks() {
+    this.allLinks = this.data.getAllLinks();
+    console.log('this.data.allLinks: ', this.data.allLinks);
+  }
+  // getAllLinks() {
+  //   this.data.getAllLinks().subscribe(links => {
+  //     this.allLinks = links;
+  //   });
+  // }
 
-  updateLinks(links) {
-    console.log('links: ', links);
-    this.allLinks = links;
+  addLink() {
+    this.data.addLink(this.newLink).subscribe(link => {
+      this.allLinks.push(link);
+    });
+    this.newLink = new Link();
   }
 }
